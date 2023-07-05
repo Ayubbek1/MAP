@@ -7,7 +7,7 @@ let arr = [
         "id": 1,
         "title": "delectus aut au`tem",
         "completed": false
-   },
+    },
     {
         "userId": 1,
         "id": 2,
@@ -74,25 +74,41 @@ let b = {
     count: 0,
     arr: []
 }
-let boolean=arr.map(trufalse => trufalse.completed  )
-let filtered = boolean.filter(completed => completed===true)
-a.count = filtered.length
 arr.forEach(completed => {
-    if(completed.completed === true){
+    if (completed.completed) {
         a.arr.push(completed)
-    }
-})
-let boolean_false=arr.map(trufalse => trufalse.completed  )
-let filtered_false = boolean.filter(completed => completed===false)
-b.count = filtered_false.length
-arr.forEach(completed => {
-    if(completed.completed === false){
+        a.count++
+    } else {
         b.arr.push(completed)
+        b.count++
     }
 })
+
 
 
 console.log(
-    "a =",a ,"\n",
-    "b =",b
+    "a =", a, "\n",
+    "b =", b
 )
+
+
+// Классная работа
+let array = ['amir', 'zokir', 'ravshan', 'jamshud', 'alex']
+
+let evenNames = []
+let oddNames = []
+
+let names = array.map(item => {
+    if (item.length % 2 === 0) {
+        evenNames++
+    } else {
+        oddNames++
+    }
+})
+if(evenNames > oddNames){
+    console.log("Четных имен больше")
+}else if(evenNames < oddNames){
+    console.log("НеЧетных имен больше")
+}else{
+    console.log("Четных и нечетных одинаково")
+}
